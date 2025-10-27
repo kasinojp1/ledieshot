@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KasinoJP - CWE GOYANG </title>
+  <title>KasinoJP - Video Pembelajaran</title>
   <style>
-    /* 🌙 Warna dan tampilan dasar */
     :root {
       --gold: #ffd24d;
       --gold-soft: #ffcc66;
@@ -26,7 +25,6 @@
       overflow-x: hidden;
     }
 
-    /* 🟡 Header */
     header {
       text-align: center;
       padding: 18px 10px;
@@ -47,7 +45,25 @@
       letter-spacing: 2px;
     }
 
-    /* 🎞️ Grid Video */
+    /* 🌟 Hero Video di Beranda */
+    .hero-video {
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 184, 77, 0.3);
+      margin: 20px 0;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -58,7 +74,6 @@
       box-sizing: border-box;
     }
 
-    /* 🎥 Kartu video */
     .video-card {
       background: var(--bg-card);
       border-radius: 12px;
@@ -76,12 +91,9 @@
       width: 100%;
       height: auto;
       display: block;
-      border: none;
-      outline: none;
       background: #000;
     }
 
-    /* 🏷️ Judul video */
     .video-title {
       padding: 10px;
       text-align: center;
@@ -91,7 +103,6 @@
       text-shadow: 0 0 6px #ff9900;
     }
 
-    /* ⚫ Footer */
     footer {
       text-align: center;
       padding: 20px 10px;
@@ -103,7 +114,6 @@
       background: rgba(0, 0, 0, 0.4);
     }
 
-    /* 📱 Responsif Mobile */
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.4rem;
@@ -120,6 +130,11 @@
         padding: 8px;
       }
 
+      .hero-video {
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+
       footer {
         font-size: 0.8rem;
       }
@@ -128,18 +143,19 @@
 </head>
 <body>
   <header>
-    <h1>KASINOJP • VIDEO CWE GOYANG</h1>
+    <h1>KASINOJP • VIDEO PEMBELAJARAN</h1>
   </header>
 
-  <section class="video-grid">
-    <div class="video-card">
-      <video controls poster="https://via.placeholder.com/600x400?text=Video+1">
-        <source src="video1.mp4" type="video/mp4" />
-        Browser Anda tidak mendukung pemutar video.
-      </video>
-      <div class="video-title">Materi 1: Pengantar</div>
-    </div>
+  <!-- 🌟 Video utama yang langsung terlihat -->
+  <div class="hero-video">
+    <video controls poster="https://via.placeholder.com/900x500?text=Video+Utama">
+      <source src="video1.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+  </div>
 
+  <!-- 🎞️ Kumpulan video lainnya -->
+  <section class="video-grid">
     <div class="video-card">
       <video controls poster="https://via.placeholder.com/600x400?text=Video+2">
         <source src="video2.mp4" type="video/mp4" />
