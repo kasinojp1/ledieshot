@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KasinoJP - Video Pembelajaran</title>
   <style>
+    /* 🌙 Warna dan tampilan dasar */
+    :root {
+      --gold: #ffd24d;
+      --gold-soft: #ffcc66;
+      --bg-dark: #000;
+      --bg-card: #111;
+      --text-muted: #aaa;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
+      background: radial-gradient(circle at top, #1a1a1a, var(--bg-dark));
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -17,74 +26,103 @@
       overflow-x: hidden;
     }
 
+    /* 🟡 Header */
     header {
       text-align: center;
-      padding: 20px 10px;
+      padding: 18px 10px;
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 204, 102, 0.3);
       z-index: 10;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
-      color: #ffd24d;
-      text-shadow: 0 0 12px #ffb84d, 0 0 24px #ff8c00;
+      font-size: 1.9rem;
+      color: var(--gold);
+      text-shadow: 0 0 10px #ffb84d, 0 0 20px #ff8c00;
       letter-spacing: 2px;
     }
 
+    /* 🎞️ Grid Video */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
       padding: 20px;
       width: 100%;
-      max-width: 1200px;
+      max-width: 1000px;
+      box-sizing: border-box;
     }
 
+    /* 🎥 Kartu video */
     .video-card {
-      background: #111;
+      background: var(--bg-card);
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 184, 77, 0.2);
+      box-shadow: 0 0 10px rgba(255, 184, 77, 0.15);
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .video-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 25px rgba(255, 184, 77, 0.4);
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 204, 102, 0.3);
     }
 
     video {
       width: 100%;
       height: auto;
+      display: block;
       border: none;
       outline: none;
-      display: block;
+      background: #000;
     }
 
+    /* 🏷️ Judul video */
     .video-title {
-      padding: 12px;
+      padding: 10px;
       text-align: center;
       font-weight: 600;
-      font-size: 1.1rem;
-      color: #ffcc66;
-      text-shadow: 0 0 8px #ff9900;
+      font-size: 1rem;
+      color: var(--gold-soft);
+      text-shadow: 0 0 6px #ff9900;
     }
 
+    /* ⚫ Footer */
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 20px 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 204, 102, 0.2);
+      margin-top: auto;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
     }
 
+    /* 📱 Responsif Mobile */
     @media (max-width: 600px) {
-      header h1 { font-size: 1.6rem; }
-      .video-title { font-size: 1rem; }
+      header h1 {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+      }
+
+      .video-grid {
+        padding: 12px;
+        gap: 12px;
+      }
+
+      .video-title {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
